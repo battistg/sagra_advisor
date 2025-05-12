@@ -57,11 +57,11 @@ if data_str in sagre:
         with st.expander(sagra["nome"]):
             st.markdown("### Foto del menu")
             for foto in sagra["menu_foto"]:
-                st.image(foto, use_column_width=True)
+                st.image(foto, use_container_width=True)
 
             st.markdown("### Foto dei piatti")
             for foto in sagra["piatti_foto"]:
-                st.image(foto, use_column_width=True)
+                st.image(foto, use_container_width=True)
 
             st.markdown("### Menu e Prezzi")
             for piatto, prezzo in sagra["menu"].items():
