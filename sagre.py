@@ -43,7 +43,7 @@ sagre = {
     ]
 }
 
-st.title("SagraAdvisor 🎥")
+st.title("Sagra Advisor")
 st.markdown("Benvenuto su **SagraAdvisor**! Seleziona una data per vedere le sagre disponibili.")
 
 # Selettore di data
