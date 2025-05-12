@@ -2,7 +2,7 @@ import streamlit as st
 import datetime
 
 # Inserisci il tuo username GitHub qui
-github_base_url = "https://github.com/battistg/sagra_advisor/edit/main"
+github_base_url = "https://github.com/battistg/sagra_advisor/edit/main/"
 
 sagre = {
     "2025-05-16": [
