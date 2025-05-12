@@ -8,11 +8,11 @@ sagre = {
     "2025-05-16": [
         {
             "nome": "Sagra di San Isidoro di Schiavon (VI)",
-            "menu_foto": [github_base_url + "IMG_0273.jpeg"],
+            "menu_foto": [github_base_url + "IMG_0266.jpeg"],
             "piatti_foto": [
-                github_base_url + "IMG_0266.jpeg",  # Frittura
-                github_base_url + "IMG_0267.jpeg",  # Grigliata
-                github_base_url + "IMG_0268.jpeg"   # Frittella
+                github_base_url + "IMG_0267.jpeg",
+                github_base_url + "IMG_0270.jpeg",
+                github_base_url + "IMG_0271.jpeg"
             ],
             "menu": {
                 "Gnocchi burro salvia": "6,00€",
