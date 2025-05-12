@@ -1,5 +1,28 @@
 import streamlit as st
 import datetime
+import matplotlib.pyplot as plt
+
+# Banner laterale con descrizione e categorie di voto
+st.sidebar.title("Info su SagraAdvisor")
+st.sidebar.markdown(
+    """
+    **SagraAdvisor** nasce per giudicare le sagre con rigore e ironia.
+
+    Non siamo Food Bloggers. Solo verità e patatine fritte.
+
+    **Criteri di valutazione (1-10):**
+    1. **Parcheggio**: se non trovi posto, è un disastro.
+    2. **Menù**: varietà o qualità? Meglio entrambe.
+    3. **Special**: il piatto che domina la sagra.
+    4. **Rabosello**: la base. Se manca, serata rovinata.
+    5. **Frittella**: se c'è, si giudica.
+    6. **Intrattenimento**: dai brucamela ai balli in acciaio.
+    7. **Location**: atmosfera e contesto.
+    8. **Prezzo**: Cracco? No grazie. Deve essere accessibile.
+    9. **Pesca di Beneficenza**: sempre una sorpresa.
+    10. **Verdetto Finale**: la media o l'impressione generale.
+    """
+)
 
 # Base URL GitHub per le immagini
 github_base_url = "https://raw.githubusercontent.com/battistg/sagra_advisor/main/"
@@ -33,24 +56,24 @@ sagre = {
             },
             "recensione": "Specialità frittura di pesce. Sagra ben organizzata con qualche alto e basso tra cibo, location e intrattenimento.",
             "voti": {
-                "Frittella": "8.5/10 - Ottima, poco unta e ben zuccherata. Prezzo 4€ un po’ alto.",
-                "Intrattenimento": "5.5/10 - Brucamela ok, autoscontro assente, cover band ok, pista da ballo male.",
-                "Pesca di Beneficenza": "9/10 - Ricca di premi seri, molto curata.",
-                "Rabosello": "0/10 - Totalmente assente, delusione.",
-                "Location": "7/10 - Ordinata ma senza cestini. Cimitero vicino poco coinvolgente."
+                "Frittella": 8.5,
+                "Intrattenimento": 5.5,
+                "Pesca di Beneficenza": 9.0,
+                "Rabosello": 0.0,
+                "Location": 7.0
             }
         }
     ]
 }
 
-st.title("Sagra Advisor")
+st.title("Sagra Advisor 🐷")
 st.markdown("Benvenuto su **Sagra Advisor**! Seleziona una data per vedere le sagre disponibili.")
 
 # Selettore di data
 data_scelta = st.date_input("Scegli una data", datetime.date.today())
 data_str = data_scelta.strftime("%Y-%m-%d")
 
-# Verifica presenza di sagre in quella data
+# Visualizza sagre se presenti
 if data_str in sagre:
     st.subheader(f"Sagre il {data_scelta.strftime('%d %B %Y')}")
     for sagra in sagre[data_str]:
@@ -72,6 +95,21 @@ if data_str in sagre:
 
             st.markdown("### Voti per Categoria")
             for categoria, voto in sagra["voti"].items():
-                st.write(f"- **{categoria}**: {voto}")
+                st.write(f"- **{categoria}**: {voto}/10")
+
+            # Riepilogo voti con media e grafico
+            st.markdown("### Riepilogo voti")
+            categorie = list(sagra["voti"].keys())
+            punteggi = list(sagra["voti"].values())
+            media = sum(punteggi) / len(punteggi)
+            st.success(f"**Media dei voti**: {media:.1f}/10")
+
+            # Grafico a barre
+            fig, ax = plt.subplots()
+            ax.barh(categorie, punteggi, color='skyblue')
+            ax.set_xlim(0, 10)
+            ax.set_xlabel("Punteggio")
+            ax.set_title("Valutazione per categoria")
+            st.pyplot(fig)
 else:
     st.warning("Nessuna sagra trovata per questa data.")
