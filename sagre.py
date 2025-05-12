@@ -1,8 +1,8 @@
 import streamlit as st
 import datetime
 
-# Dati demo aggiornati con link GitHub (RAW)
-github_base_url = "https://github.com/battistg/sagra_advisor"
+# Inserisci il tuo username GitHub qui
+github_base_url = "https://github.com/battistg/sagra_advisor/edit/main"
 
 sagre = {
     "2025-05-16": [
@@ -24,26 +24,26 @@ sagre = {
                 "Costine e salsiccia (con patatine o fagioli)": "10,50€",
                 "Salsicce (con patatine o fagioli)": "9,00€",
                 "Galletto allo spiedo (con patatine o fagioli)": "9,00€",
-                "Pizze varie (Margherita, Patatosa, Salamin, Speck e Gorgonzola, ecc.)": "5,50-7,50€",
-                "Birra bionda/rossa (33cl)": "3,50-4,00€",
-                "Birra metro (10 birre)": "32,00-36,00€",
+                "Pizze varie": "5,50€ - 7,50€",
+                "Birre (33cl)": "3,50€ - 4,00€",
+                "Birra metro (10 birre)": "32,00€ - 36,00€",
                 "Bicchiere di vino": "1,50€",
-                "Caraffa 1/2L o 1L vino": "6,00-9,00€",
-                "Spritz / Gin Tonic / Caffè": "1,30-3,00€"
+                "Caraffe di vino": "6,00€ - 9,00€",
+                "Spritz, Gin Tonic, Caffè": "1,30€ - 3,00€"
             },
-            "recensione": "Specialità frittura di pesce. La sagra è ben organizzata ma con alcuni alti e bassi tra pietanze, intrattenimento e location.",
+            "recensione": "Specialità frittura di pesce. Sagra ben organizzata con qualche alto e basso tra cibo, location e intrattenimento.",
             "voti": {
-                "Frittella": "8.5/10 - Ottima qualità, ben zuccherata, leggermente cara (4€)",
-                "Intrattenimento": "5.5/10 - Bene per i giovani, deludente per gli adulti, pista da ballo mal gestita",
-                "Pesca di Beneficenza": "9/10 - Ricca e con premi validi, ben sponsorizzata",
-                "Rabosello": "0/10 - Assente, grande delusione",
-                "Location": "7/10 - Ordinata e accogliente, ma mancano i cestini"
+                "Frittella": "8.5/10 - Ottima, poco unta e ben zuccherata. Prezzo 4€ un po’ alto.",
+                "Intrattenimento": "5.5/10 - Brucamela ok, autoscontro assente, cover band ok, pista da ballo male.",
+                "Pesca di Beneficenza": "9/10 - Ricca di premi seri, molto curata.",
+                "Rabosello": "0/10 - Totalmente assente, delusione.",
+                "Location": "7/10 - Ordinata ma senza cestini. Cimitero vicino poco coinvolgente."
             }
         }
     ]
 }
 
-st.title("SagraAdvisor \U0001F3A5")
+st.title("SagraAdvisor 🎥")
 st.markdown("Benvenuto su **SagraAdvisor**! Seleziona una data per vedere le sagre disponibili.")
 
 # Selettore di data
