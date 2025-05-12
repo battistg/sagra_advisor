@@ -1,8 +1,8 @@
 import streamlit as st
 import datetime
 
-# Inserisci il tuo username GitHub qui
-github_base_url = "https://github.com/battistg/sagra_advisor/edit/main/"
+# Base URL GitHub per le immagini
+github_base_url = "https://raw.githubusercontent.com/battistg/sagra_advisor/main/"
 
 sagre = {
     "2025-05-16": [
@@ -10,9 +10,9 @@ sagre = {
             "nome": "Sagra di San Isidoro di Schiavon (VI)",
             "menu_foto": [github_base_url + "IMG_0273.jpeg"],
             "piatti_foto": [
-                github_base_url + "IMG_0266.jpeg",
-                github_base_url + "IMG_0267.jpeg",
-                github_base_url + "IMG_0268.jpeg"
+                github_base_url + "IMG_0266.jpeg",  # Frittura
+                github_base_url + "IMG_0267.jpeg",  # Grigliata
+                github_base_url + "IMG_0268.jpeg"   # Frittella
             ],
             "menu": {
                 "Gnocchi burro salvia": "6,00€",
@@ -43,7 +43,7 @@ sagre = {
     ]
 }
 
-st.title("Sagra Advisor")
+st.title("SagraAdvisor 🎥")
 st.markdown("Benvenuto su **SagraAdvisor**! Seleziona una data per vedere le sagre disponibili.")
 
 # Selettore di data
