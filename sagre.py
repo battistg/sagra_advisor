@@ -43,8 +43,8 @@ sagre = {
     ]
 }
 
-st.title("SagraAdvisor 🎥")
-st.markdown("Benvenuto su **SagraAdvisor**! Seleziona una data per vedere le sagre disponibili.")
+st.title("Sagra Advisor")
+st.markdown("Benvenuto su **Sagra Advisor**! Seleziona una data per vedere le sagre disponibili.")
 
 # Selettore di data
 data_scelta = st.date_input("Scegli una data", datetime.date.today())
