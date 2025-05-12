@@ -1,6 +1,6 @@
 import streamlit as st
 import datetime
-import matplotlib.pyplot as plt
+import pandas as pd
 
 # Banner laterale con descrizione e categorie di voto
 st.sidebar.title("Info su SagraAdvisor")
@@ -104,12 +104,9 @@ if data_str in sagre:
             media = sum(punteggi) / len(punteggi)
             st.success(f"**Media dei voti**: {media:.1f}/10")
 
-            # Grafico a barre
-            fig, ax = plt.subplots()
-            ax.barh(categorie, punteggi, color='skyblue')
-            ax.set_xlim(0, 10)
-            ax.set_xlabel("Punteggio")
-            ax.set_title("Valutazione per categoria")
-            st.pyplot(fig)
+            # Grafico con st.bar_chart
+            st.markdown("### Grafico delle valutazioni")
+            df = pd.DataFrame({'Categoria': categorie, 'Punteggio': punteggi}).set_index('Categoria')
+            st.bar_chart(df)
 else:
     st.warning("Nessuna sagra trovata per questa data.")
